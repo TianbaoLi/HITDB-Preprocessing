@@ -6,6 +6,8 @@ Precessing step for HITDB data cleaning system by Java Swing
 - 单个本地文本文件（定义格式规则/用户指定分隔符/自分析分隔符）
 - 多个本地文本文件（自动合并）
 - csv/xls/xlsx文件
+- Json文件
+- XML文件
 
 ## 生成格式：[protobuf](https://github.com/google/protobuf)
 - 前端展示部分样例数据
