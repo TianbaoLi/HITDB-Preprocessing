@@ -15,6 +15,7 @@ public class PreProcess {
     private JRadioButton plainTextDataRadioButton;
     private JRadioButton excelDataRadioButton;
     private JRadioButton jsonDataRadioButton;
+    private JRadioButton XMLDataRadioButton;
 
     public static void main(String[] args) {
         JFrame frame = new JFrame("PreProcess");
