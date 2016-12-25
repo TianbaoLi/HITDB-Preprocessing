@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 /**
  * Created by TuringMac on 2016/12/23.
@@ -68,6 +69,16 @@ public class PreProcess {
                 selectPathButton.setEnabled(true);
             }
         });
+        selectPathButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser jFileChooser=new JFileChooser();
+                jFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+                jFileChooser.showDialog(new JLabel(), "Choose data source file");
+                File file = jFileChooser.getSelectedFile();
+                filePath.setText(file.getAbsolutePath());
+            }
+        });
     }
 
     public void init() {
@@ -83,7 +94,6 @@ public class PreProcess {
         frame.pack();
         frame.setVisible(true);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-        System.out.println(screenSize.width + " " + screenSize.height);
         frame.setSize(new Dimension((int)(screenSize.width * 0.5),(int)(screenSize.height * 0.5)));
     }
 }
