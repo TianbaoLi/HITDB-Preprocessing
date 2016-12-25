@@ -30,7 +30,9 @@ public class PreProcess {
     private JTextField SQLPort;
     private JTextField SQLTable;
     private JTextField textSeperator;
+    private ButtonGroup dataSourceButtonGroup;
     private CardLayout cardLayout;
+    private int selected;
 
     public PreProcess() {
         cardLayout = (CardLayout)optionsPanel.getLayout();
@@ -39,6 +41,7 @@ public class PreProcess {
             public void actionPerformed(ActionEvent actionEvent) {
                 cardLayout.show(optionsPanel, "Card1");
                 selectPathButton.setEnabled(false);
+                selected = 0;
             }
         });
         plainTextDataRadioButton.addActionListener(new ActionListener() {
@@ -46,6 +49,7 @@ public class PreProcess {
             public void actionPerformed(ActionEvent actionEvent) {
                 cardLayout.show(optionsPanel, "Card2");
                 selectPathButton.setEnabled(true);
+                selected = 1;
             }
         });
         excelDataRadioButton.addActionListener(new ActionListener() {
@@ -53,6 +57,7 @@ public class PreProcess {
             public void actionPerformed(ActionEvent actionEvent) {
                 cardLayout.show(optionsPanel, "Card3");
                 selectPathButton.setEnabled(true);
+                selected = 2;
             }
         });
         jsonDataRadioButton.addActionListener(new ActionListener() {
@@ -60,6 +65,7 @@ public class PreProcess {
             public void actionPerformed(ActionEvent actionEvent) {
                 cardLayout.show(optionsPanel, "Card4");
                 selectPathButton.setEnabled(true);
+                selected = 3;
             }
         });
         XMLDataRadioButton.addActionListener(new ActionListener() {
@@ -67,6 +73,7 @@ public class PreProcess {
             public void actionPerformed(ActionEvent actionEvent) {
                 cardLayout.show(optionsPanel, "Card5");
                 selectPathButton.setEnabled(true);
+                selected = 4;
             }
         });
         selectPathButton.addActionListener(new ActionListener() {
@@ -77,6 +84,12 @@ public class PreProcess {
                 jFileChooser.showDialog(new JLabel(), "Choose data source file");
                 File file = jFileChooser.getSelectedFile();
                 filePath.setText(file.getAbsolutePath());
+            }
+        });
+        savaDataButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(selected);
             }
         });
     }

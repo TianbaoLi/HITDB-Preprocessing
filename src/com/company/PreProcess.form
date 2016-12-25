@@ -261,7 +261,7 @@
     </children>
   </grid>
   <buttonGroups>
-    <group name="dataSourceButtonGroup">
+    <group name="dataSourceButtonGroup" bound="true">
       <member id="ce78e"/>
       <member id="ce78e"/>
       <member id="fce02"/>
