@@ -81,6 +81,7 @@ public class PreProcess {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser jFileChooser=new JFileChooser();
                 jFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+                jFileChooser.setCurrentDirectory(new File("."));
                 jFileChooser.showDialog(new JLabel(), "Choose data source file");
                 File file = jFileChooser.getSelectedFile();
                 if(file != null)
@@ -100,6 +101,13 @@ public class PreProcess {
                     case 3:
                         break;
                     case 4:
+                        File xmlFile = new File(filePath.getText());
+                        XMLReader xmlReader = new XMLReader(xmlFile, displayTable);
+                        try {
+                            xmlReader.read();
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
                         break;
                 }
             }
