@@ -83,13 +83,25 @@ public class PreProcess {
                 jFileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
                 jFileChooser.showDialog(new JLabel(), "Choose data source file");
                 File file = jFileChooser.getSelectedFile();
-                filePath.setText(file.getAbsolutePath());
+                if(file != null)
+                    filePath.setText(file.getAbsolutePath());
             }
         });
         savaDataButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(selected);
+                switch(selected){
+                    case 0:
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                }
             }
         });
     }
