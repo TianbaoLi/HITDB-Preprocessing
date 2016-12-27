@@ -19,23 +19,11 @@ public class CsvReader extends PlainTextReader {
     public void read() throws Exception {
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         String textString;
-        String regex = "";
-        for(char c : seperators) {
-            regex += "|";
-            if (c == '.' || c == '|' || c == '*' || c == '+')
-                regex += "\\\\";
-            else if (c == '\\')
-                regex += "\\\\";
-            regex += c;
-        }
-        regex = regex.substring(1, regex.length());
+        String regex = transRegexSeparator();
         textString = bufferedReader.readLine();
         schema = textString.split(regex);
-        while((textString = bufferedReader.readLine()) != null) {
-            String[] attributeList = textString.split(regex);
-            for(String a : attributeList)
-                System.out.print(a + "\t");
-            System.out.println();
-        }
+        for(String s : schema)
+            System.out.print(s + "\t");
+        readContent(bufferedReader, regex);
     }
 }
