@@ -105,6 +105,19 @@ public class PreProcess {
                         }
                         break;
                     case 2:
+                        String fileName  = filePath.getText();
+                        File excelFile = new File(fileName);
+                        if(fileName.endsWith(".csv")){
+                            CsvReader csvReader = new CsvReader(excelFile, displayTable, ",");
+                            try {
+                                csvReader.read();
+                            } catch (Exception e1) {
+                                e1.printStackTrace();
+                            }
+                        }
+                        else if(fileName.endsWith(".xls") || fileName.endsWith(".xlsx")){
+
+                        }
                         break;
                     case 3:
                         File jsonFile = new File(filePath.getText());

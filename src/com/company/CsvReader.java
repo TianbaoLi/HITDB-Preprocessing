@@ -8,15 +8,12 @@ import java.io.FileReader;
 /**
  * Created by TuringMac on 2016/12/27.
  */
-public class PlainTextReader {
-    protected File file;
-    protected JTable displayTable;
-    protected char[] seperators;
+public class CsvReader extends PlainTextReader {
+    private String[] schema;
 
-    public PlainTextReader(File file, JTable displayTable, String separator) {
-        this.file = file;
-        this.displayTable = displayTable;
-        this.seperators = separator.toCharArray();
+    public CsvReader(File file, JTable displayTable, String separator) {
+        super(file, displayTable, separator);
+        this.schema = null;
     }
 
     public void read() throws Exception {
@@ -32,6 +29,8 @@ public class PlainTextReader {
             regex += c;
         }
         regex = regex.substring(1, regex.length());
+        textString = bufferedReader.readLine();
+        schema = textString.split(regex);
         while((textString = bufferedReader.readLine()) != null) {
             String[] attributeList = textString.split(regex);
             for(String a : attributeList)
