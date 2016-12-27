@@ -99,6 +99,13 @@ public class PreProcess {
                     case 2:
                         break;
                     case 3:
+                        File jsonFile = new File(filePath.getText());
+                        JsonReader jsonReader = new JsonReader(jsonFile, displayTable);
+                        try {
+                            jsonReader.read();
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
                         break;
                     case 4:
                         File xmlFile = new File(filePath.getText());
