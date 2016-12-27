@@ -95,6 +95,14 @@ public class PreProcess {
                     case 0:
                         break;
                     case 1:
+                        File textFile = new File(filePath.getText());
+                        String separator = textSeperator.getText();
+                        PlainTextReader plainTextReader = new PlainTextReader(textFile, displayTable, separator);
+                        try {
+                            plainTextReader.read();
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
                         break;
                     case 2:
                         break;
