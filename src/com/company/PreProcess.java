@@ -32,6 +32,7 @@ public class PreProcess {
     private JTextField textSeperator;
     private JTextField SQLUser;
     private JPasswordField SQLPassword;
+    private JTextField SQLDatabase;
     private ButtonGroup dataSourceButtonGroup;
     private CardLayout cardLayout;
     private int selected;
@@ -96,7 +97,19 @@ public class PreProcess {
                 switch(selected){
                     case 0:
                         File sqlFile = new File(filePath.getText());
-                        SqlReader sqlReader = new SqlReader(sqlFile, displayTable);
+                        String ip = SQLIp.getText();
+                        String database = SQLDatabase.getText();
+                        String table = SQLTable.getText();
+                        String user = SQLUser.getText();
+                        int port = 0;
+                        String password = "";
+                        try {
+                            port = Integer.parseInt(SQLPort.getText());
+                            password = String.valueOf(SQLPassword.getPassword());
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
+                        SqlReader sqlReader = new SqlReader(sqlFile, displayTable, ip, port, database, table, user, password);
                         try {
                             sqlReader.read();
                         } catch (Exception e1) {
