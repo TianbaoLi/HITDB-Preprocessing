@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1bbb4c77-8338-4621-af10-bb1f44602c54" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/PreProcess.form" afterPath="$PROJECT_DIR$/src/com/company/PreProcess.form" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/PreProcess.java" afterPath="$PROJECT_DIR$/src/com/company/PreProcess.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/SqlReader.java" afterPath="$PROJECT_DIR$/src/com/company/SqlReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="HITDB-Preprocessing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -60,8 +57,8 @@
       <file leaf-file-name="SqlReader.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/SqlReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+            <state relative-caret-position="-1223">
+              <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <marker date="1482911274040" expanded="true" signature="1367:1381" ph="SELECT * FRO... missingValue" />
@@ -745,12 +742,12 @@
       <workItem from="1482891093681" duration="2110000" />
       <workItem from="1482893388079" duration="890000" />
       <workItem from="1482894527349" duration="5615000" />
-      <workItem from="1482901537390" duration="6976000" />
+      <workItem from="1482901537390" duration="7166000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67459000" />
+    <option name="totallyTimeSpent" value="67649000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1195,8 +1192,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/SqlReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="35" column="5" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
+        <state relative-caret-position="-1223">
+          <caret line="49" column="59" selection-start-line="49" selection-start-column="59" selection-end-line="49" selection-end-column="59" />
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1482911274040" expanded="true" signature="1367:1381" ph="SELECT * FRO... missingValue" />

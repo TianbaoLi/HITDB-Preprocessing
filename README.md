@@ -3,7 +3,7 @@ Precessing step for HITDB data cleaning system by Java Swing
 
 ## 数据源格式：
 - SQL数据源（以mySQL为例，选择数据源ip、port、表单）
-- 单个本地文本文件（定义格式规则/用户指定分隔符/自分析分隔符）
+- 单个本地文本文件（用户指定分隔符）
 - csv/xls/xlsx文件
 - Json文件
 - XML文件
@@ -17,4 +17,3 @@ Precessing step for HITDB data cleaning system by Java Swing
 - 数值型（整形、浮点型、百分比）
 - 字符串（字符）
 - 时间类型（Date/timestamp）
-- 货币金额
