@@ -1,7 +1,78 @@
 package com.company;
 
+import org.apache.poi.ss.usermodel.*;
+
+import javax.swing.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+
 /**
  * Created by TuringMac on 2016/12/28.
  */
-public class XlsxReader {
+public class XlsxReader extends Reader {
+    private String[] schema;
+
+    public XlsxReader(File file, JTable displayTable) {
+        super(file, displayTable);
+        this.schema = null;
+    }
+
+    public void read() throws Exception {
+        Workbook book = getExcelWorkbook();
+        Sheet sheet = book.getSheetAt(0);
+        int lastRowNum = sheet.getLastRowNum();
+        Row row = sheet.getRow(0);
+        Cell cell = null;
+        int lastCellNum = row.getLastCellNum();
+        ArrayList<String> schemaList = new ArrayList<>();
+        for(int j = 0; j <= lastCellNum; j++){
+            cell = row.getCell(j);
+            if(cell != null)
+                schemaList.add(cell.getStringCellValue().toString());
+        }
+        schema = schemaList.toArray(new String[0]);
+        for(String s : schema)
+            System.out.print(s + "\t");
+        System.out.println();
+        ArrayList<String> attrList = null;
+        for(int i = 1; i <= lastRowNum; i++){
+            row = sheet.getRow(i);
+            if( row != null ){
+                lastCellNum = row.getLastCellNum();
+                attrList = new ArrayList<>();
+                for(int j = 0; j <= lastCellNum; j++){
+                    cell = row.getCell(j);
+                    if(cell != null) {
+                        cell.setCellType(CellType.STRING);
+                        attrList.add(cell.getStringCellValue().toString());
+                    }
+                }
+            }
+            for(String a : attrList)
+                System.out.print(a + "\t");
+            System.out.println();
+        }
+    }
+
+    public Workbook getExcelWorkbook() throws IOException {
+        Workbook workbook = null;
+        FileInputStream fileInputStream = null;
+        try {
+            if(!file.exists()){
+                throw new RuntimeException("Excel file does not exist!");
+            }else{
+                fileInputStream = new FileInputStream(file);
+                workbook = WorkbookFactory.create(fileInputStream);
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e.getMessage());
+        } finally {
+            if(fileInputStream != null){
+                fileInputStream.close();
+            }
+        }
+        return workbook;
+    }
 }

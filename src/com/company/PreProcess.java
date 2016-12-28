@@ -116,7 +116,12 @@ public class PreProcess {
                             }
                         }
                         else if(fileName.endsWith(".xls") || fileName.endsWith(".xlsx")){
-
+                            XlsxReader xlsxReader = new XlsxReader(excelFile, displayTable);
+                            try {
+                                xlsxReader.read();
+                            } catch (Exception e1) {
+                                e1.printStackTrace();
+                            }
                         }
                         break;
                     case 3:
