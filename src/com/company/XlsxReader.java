@@ -24,7 +24,7 @@ public class XlsxReader extends Reader {
         Sheet sheet = book.getSheetAt(0);
         int lastRowNum = sheet.getLastRowNum();
         Row row = sheet.getRow(0);
-        Cell cell = null;
+        Cell cell;
         int lastCellNum = row.getLastCellNum();
         ArrayList<String> schemaList = new ArrayList<>();
         for(int j = 0; j <= lastCellNum; j++){
@@ -36,22 +36,30 @@ public class XlsxReader extends Reader {
         for(String s : schema)
             System.out.print(s + "\t");
         System.out.println();
-        ArrayList<String> attrList = null;
+        ArrayList<Object> attrList = null;
+        CellType cellType;
         for(int i = 1; i <= lastRowNum; i++){
             row = sheet.getRow(i);
-            if( row != null ){
+            if(row != null ){
                 lastCellNum = row.getLastCellNum();
                 attrList = new ArrayList<>();
                 for(int j = 0; j <= lastCellNum; j++){
                     cell = row.getCell(j);
                     if(cell != null) {
-                        cell.setCellType(CellType.STRING);
-                        attrList.add(cell.getStringCellValue().toString());
+                        cellType = cell.getCellTypeEnum();
+                        if(cellType == CellType.BOOLEAN)
+                            attrList.add(cell.getBooleanCellValue());
+                        else if(cellType == CellType.NUMERIC)
+                            attrList.add(cell.getNumericCellValue());
+                        else if(cellType == CellType.STRING)
+                            attrList.add(cell.getStringCellValue());
+                        else if(cellType == CellType.FORMULA)
+                            attrList.add(cell.getCellFormula());
                     }
                 }
             }
-            for(String a : attrList)
-                System.out.print(a + "\t");
+            for(Object o : attrList)
+                System.out.print(o + "\t");
             System.out.println();
         }
     }
