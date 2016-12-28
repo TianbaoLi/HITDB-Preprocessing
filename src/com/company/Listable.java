@@ -6,5 +6,7 @@ package com.company;
 public interface Listable {
     public static final int itemAmount = 200;
 
+    public void schemaList(String[] list);
+
     public void tableList();
 }

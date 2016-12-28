@@ -3,6 +3,7 @@ package com.company;
 import org.apache.poi.ss.usermodel.*;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -11,7 +12,7 @@ import java.util.ArrayList;
 /**
  * Created by TuringMac on 2016/12/28.
  */
-public class XlsxReader extends Reader {
+public class XlsxReader extends Reader implements Listable {
     private String[] schema;
 
     public XlsxReader(File file, JTable displayTable) {
@@ -36,6 +37,7 @@ public class XlsxReader extends Reader {
         for(String s : schema)
             System.out.print(s + "\t");
         System.out.println();
+        schemaList(schema);
         ArrayList<Object> attrList = null;
         CellType cellType;
         for(int i = 1; i <= lastRowNum; i++){
@@ -82,5 +84,17 @@ public class XlsxReader extends Reader {
             }
         }
         return workbook;
+    }
+
+    @Override
+    public void schemaList(String[] list) {
+        String[][] row = new String[Listable.itemAmount][list.length];
+        DefaultTableModel defaultTableModel = new DefaultTableModel(row, list);
+        displayTable.setModel(defaultTableModel);
+    }
+
+    @Override
+    public void tableList() {
+
     }
 }
