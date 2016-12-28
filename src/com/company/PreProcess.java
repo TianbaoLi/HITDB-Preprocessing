@@ -30,6 +30,8 @@ public class PreProcess {
     private JTextField SQLPort;
     private JTextField SQLTable;
     private JTextField textSeperator;
+    private JTextField SQLUser;
+    private JPasswordField SQLPassword;
     private ButtonGroup dataSourceButtonGroup;
     private CardLayout cardLayout;
     private int selected;
@@ -93,6 +95,13 @@ public class PreProcess {
             public void actionPerformed(ActionEvent e) {
                 switch(selected){
                     case 0:
+                        File sqlFile = new File(filePath.getText());
+                        SqlReader sqlReader = new SqlReader(sqlFile, displayTable);
+                        try {
+                            sqlReader.read();
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                        }
                         break;
                     case 1:
                         File textFile = new File(filePath.getText());
