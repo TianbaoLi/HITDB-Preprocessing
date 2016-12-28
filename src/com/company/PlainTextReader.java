@@ -9,14 +9,11 @@ import java.io.IOException;
 /**
  * Created by TuringMac on 2016/12/27.
  */
-public class PlainTextReader {
-    protected File file;
-    protected JTable displayTable;
+public class PlainTextReader extends Reader {
     protected char[] separators;
 
     public PlainTextReader(File file, JTable displayTable, String separator) {
-        this.file = file;
-        this.displayTable = displayTable;
+        super(file, displayTable);
         this.separators = separator.toCharArray();
     }
 

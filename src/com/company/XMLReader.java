@@ -7,20 +7,15 @@ import org.dom4j.io.SAXReader;
 
 import javax.swing.*;
 import java.io.File;
-import java.io.InputStream;
 import java.util.Iterator;
 import java.util.List;
 
 /**
  * Created by TuringMac on 2016/12/26.
  */
-public class XMLReader {
-    private File file;
-    private JTable displayTable;
-
+public class XMLReader extends Reader {
     public XMLReader(File file, JTable displayTable) {
-        this.file = file;
-        this.displayTable = displayTable;
+        super(file, displayTable);
     }
 
     public void read() throws Exception{

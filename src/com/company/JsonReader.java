@@ -1,6 +1,5 @@
 package com.company;
 
-import com.google.gson.JsonObject;
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 
@@ -12,13 +11,9 @@ import java.io.FileReader;
 /**
  * Created by TuringMac on 2016/12/27.
  */
-public class JsonReader {
-    private File file;
-    private JTable displayTable;
-
+public class JsonReader extends Reader {
     public JsonReader(File file, JTable displayTable) {
-        this.file = file;
-        this.displayTable = displayTable;
+        super(file, displayTable);
     }
 
     class District{
