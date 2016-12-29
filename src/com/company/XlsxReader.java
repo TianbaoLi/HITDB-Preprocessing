@@ -9,6 +9,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static java.lang.Math.min;
+
 /**
  * Created by TuringMac on 2016/12/28.
  */
@@ -34,10 +36,10 @@ public class XlsxReader extends Reader implements Listable {
                 schemaList.add(cell.getStringCellValue().toString());
         }
         schema = schemaList.toArray(new String[0]);
-        for(String s : schema)
+        /*for(String s : schema)
             System.out.print(s + "\t");
-        System.out.println();
-        schemaList(schema);
+        System.out.println();*/
+        schemaList(lastRowNum, lastCellNum, schema);
         ArrayList<Object> attrList = null;
         CellType cellType;
         for(int i = 1; i <= lastRowNum; i++){
@@ -45,7 +47,7 @@ public class XlsxReader extends Reader implements Listable {
             if(row != null ){
                 lastCellNum = row.getLastCellNum();
                 attrList = new ArrayList<>();
-                for(int j = 0; j <= lastCellNum; j++){
+                for(int j = 0; j < lastCellNum; j++){
                     cell = row.getCell(j);
                     if(cell != null) {
                         cellType = cell.getCellTypeEnum();
@@ -57,12 +59,18 @@ public class XlsxReader extends Reader implements Listable {
                             attrList.add(cell.getStringCellValue());
                         else if(cellType == CellType.FORMULA)
                             attrList.add(cell.getCellFormula());
+                        else
+                            attrList.add(new String(""));
                     }
+                    else
+                        attrList.add(new String(""));
                 }
             }
-            for(Object o : attrList)
+            /*for(Object o : attrList)
                 System.out.print(o + "\t");
             System.out.println();
+            System.out.println(attrList.size());*/
+            tableList(i - 1, attrList);
         }
     }
 
@@ -87,14 +95,16 @@ public class XlsxReader extends Reader implements Listable {
     }
 
     @Override
-    public void schemaList(String[] list) {
-        String[][] row = new String[Listable.itemAmount][list.length];
+    public void schemaList(int rowRange, int columnRange, String[] list) {
+        int rowCount = min(Listable.itemAmount, rowRange);
+        String[][] row = new String[rowCount][columnRange];
         DefaultTableModel defaultTableModel = new DefaultTableModel(row, list);
         displayTable.setModel(defaultTableModel);
     }
 
     @Override
-    public void tableList() {
-
+    public void tableList(int row, ArrayList<Object> list) {
+        for(int i = 0; i < list.size(); i++)
+            displayTable.setValueAt(list.get(i), row, i);
     }
 }
