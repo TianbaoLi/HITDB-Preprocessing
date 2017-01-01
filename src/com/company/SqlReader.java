@@ -3,14 +3,17 @@ package com.company;
 import jdk.internal.org.objectweb.asm.Type;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 
+import static java.lang.Math.min;
+
 /**
  * Created by TuringMac on 2016/12/28.
  */
-public class SqlReader extends Reader {
+public class SqlReader extends Reader implements Listable {
     private String ip;
     private int port;
     private String database;
@@ -138,5 +141,19 @@ public class SqlReader extends Reader {
                 se.printStackTrace();
             }
         }
+    }
+
+    @Override
+    public void schemaList(int rowRange, int columnRange, String[] list) {
+        /*int rowCount = min(Listable.itemAmount, rowRange);
+        String[][] row = new String[rowCount][columnRange];
+        DefaultTableModel defaultTableModel = new DefaultTableModel(row, list);
+        displayTable.setModel(defaultTableModel);*/
+    }
+
+    @Override
+    public void tableList(int row, ArrayList<Object> list) {
+        /*for(int i = 0; i < list.size(); i++)
+            displayTable.setValueAt(list.get(i), row, i);*/
     }
 }
