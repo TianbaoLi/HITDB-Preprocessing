@@ -59,16 +59,21 @@ public class SqlReader extends Reader implements Listable {
                 schemaList.add(attribute);
                 typeList.add(tp);
             }
+            resultSet.last();
+            int rowRange = resultSet.getRow();
+            resultSet.beforeFirst();
             schema = schemaList.toArray(new String[0]);
+            schemaList(rowRange, schemaList.size(), schema);
             type = typeList.toArray(new String[0]);
-            for(String s : schemaList)
+            /*for(String s : schemaList)
                 System.out.print(s + "\t");
-            System.out.println();
-            for(String t : type)
+            System.out.println();*/
+            /*for(String t : type)
                 System.out.print(t + "\t");
-            System.out.println();
+            System.out.println();*/
             ArrayList<Object> attrList;
             Object attr = null;
+            int rowCount = 0;
             while(resultSet.next()){
                 attrList = new ArrayList<>();
                 for(int i = 1; i <= type.length; i++){
@@ -118,9 +123,11 @@ public class SqlReader extends Reader implements Listable {
                     }
                     attrList.add(attr);
                 }
-                for(Object o : attrList)
+                /*for(Object o : attrList)
                     System.out.print(o + "\t");
-                System.out.println();
+                System.out.println();*/
+                tableList(rowCount, attrList);
+                rowCount++;
             }
             resultSet.close();
             statement.close();
@@ -145,15 +152,15 @@ public class SqlReader extends Reader implements Listable {
 
     @Override
     public void schemaList(int rowRange, int columnRange, String[] list) {
-        /*int rowCount = min(Listable.itemAmount, rowRange);
+        int rowCount = min(Listable.itemAmount, rowRange);
         String[][] row = new String[rowCount][columnRange];
         DefaultTableModel defaultTableModel = new DefaultTableModel(row, list);
-        displayTable.setModel(defaultTableModel);*/
+        displayTable.setModel(defaultTableModel);
     }
 
     @Override
     public void tableList(int row, ArrayList<Object> list) {
-        /*for(int i = 0; i < list.size(); i++)
-            displayTable.setValueAt(list.get(i), row, i);*/
+        for(int i = 0; i < list.size(); i++)
+            displayTable.setValueAt(list.get(i), row, i);
     }
 }
