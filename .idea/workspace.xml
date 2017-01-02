@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1bbb4c77-8338-4621-af10-bb1f44602c54" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/SqlReader.java" afterPath="$PROJECT_DIR$/src/com/company/SqlReader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/XlsxReader.java" afterPath="$PROJECT_DIR$/src/com/company/XlsxReader.java" />
     </list>
     <ignored path="HITDB-Preprocessing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -67,8 +68,8 @@
       <file leaf-file-name="XlsxReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/XlsxReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="97" column="39" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="39" />
+            <state relative-caret-position="209">
+              <caret line="44" column="73" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -77,10 +78,10 @@
       <file leaf-file-name="SqlReader.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/SqlReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+            <state relative-caret-position="251">
+              <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
               <folding>
-                <marker date="1483372740087" expanded="true" signature="1466:1480" ph="SELECT * FRO... missingValue" />
+                <marker date="1483374091764" expanded="true" signature="1526:1540" ph="SELECT * FRO... missingValue" />
               </folding>
             </state>
           </provider>
@@ -119,8 +120,8 @@
         <option value="$PROJECT_DIR$/src/com/company/JsonReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/PreProcess.java" />
         <option value="$PROJECT_DIR$/src/com/company/PreProcess.form" />
-        <option value="$PROJECT_DIR$/src/com/company/XlsxReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/Listable.java" />
+        <option value="$PROJECT_DIR$/src/com/company/XlsxReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/SqlReader.java" />
       </list>
     </option>
@@ -695,12 +696,12 @@
       <workItem from="1482901537390" duration="13951000" />
       <workItem from="1482981342695" duration="173000" />
       <workItem from="1482981536780" duration="2438000" />
-      <workItem from="1483345488009" duration="7086000" />
+      <workItem from="1483345488009" duration="8436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84131000" />
+    <option name="totallyTimeSpent" value="85481000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -713,7 +714,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20065077" sideWeight="0.5021322" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19956616" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19956616" sideWeight="0.4978678" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1152,18 +1153,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/XlsxReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="97" column="39" selection-start-line="97" selection-start-column="31" selection-end-line="97" selection-end-column="39" />
+        <state relative-caret-position="209">
+          <caret line="44" column="73" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="73" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/SqlReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="61" column="29" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
+        <state relative-caret-position="251">
+          <caret line="72" column="35" selection-start-line="72" selection-start-column="35" selection-end-line="72" selection-end-column="35" />
           <folding>
-            <marker date="1483372740087" expanded="true" signature="1466:1480" ph="SELECT * FRO... missingValue" />
+            <marker date="1483374091764" expanded="true" signature="1526:1540" ph="SELECT * FRO... missingValue" />
           </folding>
         </state>
       </provider>

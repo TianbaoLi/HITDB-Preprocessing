@@ -42,7 +42,7 @@ public class XlsxReader extends Reader implements Listable {
         schemaList(lastRowNum, lastCellNum, schema);
         ArrayList<Object> attrList = null;
         CellType cellType;
-        for(int i = 1; i <= lastRowNum; i++){
+        for(int i = 1; i <= lastRowNum && i <= Listable.itemAmount; i++){
             row = sheet.getRow(i);
             if(row != null ){
                 lastCellNum = row.getLastCellNum();

@@ -44,7 +44,7 @@ public class SqlReader extends Reader implements Listable {
         try{
             Class.forName(JDBC_DRIVER);
             connection = DriverManager.getConnection(dbUrl, user, password);
-            statement = connection.createStatement();
+            statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_UPDATABLE);
             String sql = "SELECT * FROM " + table;
             ResultSet resultSet = statement.executeQuery(sql);
             ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
@@ -63,18 +63,20 @@ public class SqlReader extends Reader implements Listable {
             int rowRange = resultSet.getRow();
             resultSet.beforeFirst();
             schema = schemaList.toArray(new String[0]);
-            schemaList(rowRange, schemaList.size(), schema);
+            schemaList(rowRange + 1, schemaList.size(), schema);
             type = typeList.toArray(new String[0]);
             /*for(String s : schemaList)
                 System.out.print(s + "\t");
-            System.out.println();*/
-            /*for(String t : type)
+            System.out.println();
+            for(String t : type)
                 System.out.print(t + "\t");
             System.out.println();*/
             ArrayList<Object> attrList;
             Object attr = null;
             int rowCount = 0;
             while(resultSet.next()){
+                if(rowCount >= Listable.itemAmount)
+                    break;
                 attrList = new ArrayList<>();
                 for(int i = 1; i <= type.length; i++){
                     switch(type[i - 1]){
@@ -98,6 +100,9 @@ public class SqlReader extends Reader implements Listable {
                             break;
                         case "FLOAT":
                             attr = resultSet.getFloat(i);
+                            break;
+                        case "INT":
+                            attr = resultSet.getInt(i);
                             break;
                         case "INTEGER":
                             attr = resultSet.getInt(i);
