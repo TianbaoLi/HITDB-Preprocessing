@@ -16,20 +16,54 @@ import static java.lang.Math.min;
 /**
  * Created by TuringMac on 2016/12/27.
  */
+
+class District{
+    private int code;
+    private int sheng;
+    private int di;
+    private int xian;
+    private String name;
+    private int level;
+    private static int fieldNum = 6;
+    private static String[] schema = {"code", "sheng", "di", "xian", "name", "level"};
+
+    public int getCode() {
+        return code;
+    }
+
+    public int getSheng() {
+        return sheng;
+    }
+
+    public int getDi() {
+        return di;
+    }
+
+    public int getXian() {
+        return xian;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public static int getFieldNum() {
+        return fieldNum;
+    }
+
+    public static String[] getSchema() {
+        return schema;
+    }
+
+}
+
 public class JsonReader extends Reader implements Listable {
     public JsonReader(File file, JTable displayTable) {
         super(file, displayTable);
-    }
-
-    class District{
-        private int code;
-        private int sheng;
-        private int di;
-        private int xian;
-        private String name;
-        private int level;
-        private int fieldNum = 6;
-        private String[] schema = {"code", "sheng", "di", "xian", "name", "level"};
     }
 
     public void read() throws Exception {
@@ -37,25 +71,21 @@ public class JsonReader extends Reader implements Listable {
         Gson gson = new Gson();
         TypeAdapter<District> typeAdapter = gson.getAdapter(District.class);
         String jsonString;
-        boolean schemaFound = false;
+        schemaList(Listable.itemAmount, District.getFieldNum(), District.getSchema());
         ArrayList<Object> attrList;
         int rowCount = 0;
         while((jsonString = bufferedReader.readLine()) != null) {
-            if(rowCount > Listable.itemAmount)
+            if(rowCount >= Listable.itemAmount)
                 break;
             District district = typeAdapter.fromJson(jsonString);
-            System.out.println(district.code + " " + district.sheng+ " " + district.di+ " " + district.xian+ " " + district.name+ " " + district.level);
+            //System.out.println(district.getCode() + " " + district.getSheng()+ " " + district.getDi()+ " " + district.getXian()+ " " + district.getName()+ " " + district.getLevel());
             attrList = new ArrayList<>();
-            attrList.add(district.code);
-            attrList.add(district.sheng);
-            attrList.add(district.di);
-            attrList.add(district.xian);
-            attrList.add(district.name);
-            attrList.add(district.level);
-            if(schemaFound == false){
-                schemaFound = true;
-                schemaList(Listable.itemAmount, district.fieldNum, district.schema);
-            }
+            attrList.add(district.getCode());
+            attrList.add(district.getSheng());
+            attrList.add(district.getDi());
+            attrList.add(district.getXian());
+            attrList.add(district.getName());
+            attrList.add(district.getLevel());
             tableList(rowCount, attrList);
             rowCount++;
         }
