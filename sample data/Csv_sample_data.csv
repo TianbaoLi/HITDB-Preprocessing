@@ -1,4 +1,4 @@
-序号,姓名,职务类型,教育背景,是否是华人,所获荣誉或Title,是否是某学术期刊的编辑或学术会议的组委会成员/专业委员会,研究方向,有几个博士学生/博士后学生/硕士学生/RA等团队成员,近三年学术文章数量,兼职/以往雇主,E-mail
+No,Name,Title,Study,Chinese,Awards,Fellow,Research area,Students,Papers,Past-employer,E-mail
 1,Trevor Darrell,PATH Directors,PhD. (MIT),NO,,,"Computer vision, machine learning, perception-based human computer interfaces",14,31,"UCB EECS, MIT EECS",trevor@eecs.berkeley.edu
 2,Thomas West,PATH Directors,,NO,,"Chair of the State Chapters Council for ITS-America, Ex-Officio member of the Board of Directors to ITS America, member of the Transportation Safety Advancement Group","Transportation challenges including safety, mobility, environment",,,California Department of Transportation,
 3,Joe Butler,Program Leaders,M.S. (UPenn),NO,,,Program management,,,"Risk Management Solutions, Streamline Solutions, Countrywide Home Loans, IdeaBlade Inc., ezboard, ObjectWare Inc., Texas Instruments",joe.butler@berkeley.edu
