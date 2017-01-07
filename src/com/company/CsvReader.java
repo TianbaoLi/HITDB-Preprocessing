@@ -43,7 +43,6 @@ public class CsvReader extends PlainTextReader implements Listable {
 
     @Override
     public void tableList(int row, ArrayList<Object> list) {
-        for(int i = 0; i < list.size(); i++)
-            displayTable.setValueAt(list.get(i), row, i);
+
     }
 }
