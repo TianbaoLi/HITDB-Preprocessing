@@ -27,8 +27,8 @@ public class CsvReader extends PlainTextReader implements Listable {
         String regex = transRegexSeparator();
         textString = bufferedReader.readLine();
         schema = textString.split(regex);
-        for(String s : schema)
-            System.out.print(s + "\t");
+        /*for(String s : schema)
+            System.out.print(s + "\t");*/
         schemaList(Listable.itemAmount, schema.length, schema);
         readContent(bufferedReader, regex);
     }
@@ -43,6 +43,7 @@ public class CsvReader extends PlainTextReader implements Listable {
 
     @Override
     public void tableList(int row, ArrayList<Object> list) {
-
+        for(int i = 0; i < list.size(); i++)
+            displayTable.setValueAt(list.get(i), row, i);
     }
 }

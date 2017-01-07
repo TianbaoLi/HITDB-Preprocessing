@@ -4,7 +4,6 @@
     <list default="true" id="1bbb4c77-8338-4621-af10-bb1f44602c54" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/CsvReader.java" afterPath="$PROJECT_DIR$/src/com/company/CsvReader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/PlainTextReader.java" afterPath="$PROJECT_DIR$/src/com/company/PlainTextReader.java" />
     </list>
     <ignored path="HITDB-Preprocessing.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,7 +58,7 @@
       <file leaf-file-name="PreProcess.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/PreProcess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3996">
+            <state relative-caret-position="724">
               <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
               <folding />
             </state>
@@ -98,21 +97,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlainTextReader.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlainTextReader.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/PlainTextReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+            <state relative-caret-position="432">
+              <caret line="81" column="57" selection-start-line="80" selection-start-column="8" selection-end-line="81" selection-end-column="57" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CsvReader.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CsvReader.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/CsvReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="31" column="63" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="63" />
+            <state relative-caret-position="614">
+              <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -152,8 +151,8 @@
         <option value="$PROJECT_DIR$/src/com/company/XlsxReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/SqlReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/JsonReader.java" />
-        <option value="$PROJECT_DIR$/src/com/company/CsvReader.java" />
         <option value="$PROJECT_DIR$/src/com/company/PlainTextReader.java" />
+        <option value="$PROJECT_DIR$/src/com/company/CsvReader.java" />
       </list>
     </option>
   </component>
@@ -736,12 +735,12 @@
       <workItem from="1483345488009" duration="8436000" />
       <workItem from="1483543856555" duration="3968000" />
       <workItem from="1483617360694" duration="682000" />
-      <workItem from="1483714572689" duration="6828000" />
+      <workItem from="1483714572689" duration="7177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96959000" />
+    <option name="totallyTimeSpent" value="97308000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1135,14 +1134,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/PreProcess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3996">
-          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/XlsxReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2268">
@@ -1159,14 +1150,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/CsvReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="31" column="63" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/JsonReader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
@@ -1175,10 +1158,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/PreProcess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="152" column="0" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/PlainTextReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="49" column="26" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+        <state relative-caret-position="432">
+          <caret line="81" column="57" selection-start-line="80" selection-start-column="8" selection-end-line="81" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/CsvReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="46" column="57" selection-start-line="46" selection-start-column="57" selection-end-line="46" selection-end-column="57" />
           <folding />
         </state>
       </provider>
